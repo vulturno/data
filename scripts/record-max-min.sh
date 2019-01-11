@@ -2,7 +2,7 @@
 
 <<comentario
 Dependencias: csvkit - sed(linux)
-Un pequeño script para obtener la el año y la temperatura máxima y mínima.
+Un pequeño script para obtener la temperatura máxima y mínima y el año en el que se dieron.
 Ordenamos con CSVSORT la columna de la temperatura que es la número 2.
 Lo guardamos en un csv temporal.
 Ahora eliminamos todas las líneas a excepción de la primera y la segunda.
