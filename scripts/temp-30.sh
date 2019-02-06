@@ -25,11 +25,10 @@ indicativo=('0016A' '0076' '0367' '1024E' '1082' '1109' '1249I' '1387' '1428' '1
 # Recorremos el array de nombre de estación
 for (( i=0; i<${#nombre[@]}; ++i )); do
     # Obtenemos un CSV solamente con la fecha, y temperaturas máximas iguales o superiores a 20ºC
-    jq -r '["fecha", "minima"], (.[] | select(.tmin >= 20) | select(.tmin != null) | [.fecha, .tmin]) | @csv' ${indicativo[$i]}-total-diario.json >~/github/data/tropicales/${nombre[$i]}-heladas.csv
+    jq -r '["fecha", "maxima"], (.[] | select(.max >= 30) | select(.max != null) | [.fecha, .tmax]) | @csv' ${indicativo[$i]}-total-diario.json >~/github/data/temp-30/${nombre[$i]}-temp-30.csv
     echo "${nombre[$i]} terminada!"
 done
 
 
-
 # jq deja algunas comillas en el CSV, las eliminamos con sed :)
-sed -i 's/\"//g' ~/github/data/tropicales/*.csv
+sed -i 's/\"//g' ~/github/data/temp-30/*.csv
