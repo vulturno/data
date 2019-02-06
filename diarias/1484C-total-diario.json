@@ -18,7 +18,7 @@
   "presMax" : 1019.2,
   "horaPresMax" : 10,
   "presMin" : 1016.7,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-02",
   "indicativo" : "1484C",
@@ -39,7 +39,7 @@
   "presMax" : 1019.1,
   "horaPresMax" : 0,
   "presMin" : 1013.7,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }, {
   "fecha" : "2019-01-03",
   "indicativo" : "1484C",
@@ -60,7 +60,7 @@
   "presMax" : 1015.1,
   "horaPresMax" : "Varias",
   "presMin" : 1013.3,
-  "horaPresMin" : "5"
+  "horaPresMin" : 5
 }, {
   "fecha" : "2019-01-04",
   "indicativo" : "1484C",
@@ -81,7 +81,7 @@
   "presMax" : 1019.2,
   "horaPresMax" : 23,
   "presMin" : 1014.0,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-05",
   "indicativo" : "1484C",
@@ -102,7 +102,7 @@
   "presMax" : 1022.1,
   "horaPresMax" : 10,
   "presMin" : 1019.8,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-06",
   "indicativo" : "1484C",
@@ -144,7 +144,7 @@
   "presMax" : 1018.3,
   "horaPresMax" : 0,
   "presMin" : 1015.7,
-  "horaPresMin" : "16"
+  "horaPresMin" : 16
 }, {
   "fecha" : "2019-01-08",
   "indicativo" : "1484C",
@@ -165,7 +165,7 @@
   "presMax" : 1018.4,
   "horaPresMax" : 11,
   "presMin" : 1015.0,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }, {
   "fecha" : "2019-01-09",
   "indicativo" : "1484C",
@@ -228,7 +228,7 @@
   "presMax" : 1017.5,
   "horaPresMax" : 23,
   "presMin" : 1011.1,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-12",
   "indicativo" : "1484C",
@@ -249,7 +249,7 @@
   "presMax" : 1019.3,
   "horaPresMax" : 11,
   "presMin" : 1017.0,
-  "horaPresMin" : "6"
+  "horaPresMin" : 6
 }, {
   "fecha" : "2019-01-13",
   "indicativo" : "1484C",
@@ -312,7 +312,7 @@
   "presMax" : 1008.7,
   "horaPresMax" : 0,
   "presMin" : 1005.3,
-  "horaPresMin" : "16"
+  "horaPresMin" : 16
 }, {
   "fecha" : "2019-01-16",
   "indicativo" : "1484C",
@@ -333,7 +333,7 @@
   "presMax" : 1007.4,
   "horaPresMax" : 24,
   "presMin" : 1004.0,
-  "horaPresMin" : "6"
+  "horaPresMin" : 6
 }, {
   "fecha" : "2019-01-17",
   "indicativo" : "1484C",
@@ -354,7 +354,7 @@
   "presMax" : 1010.6,
   "horaPresMax" : 23,
   "presMin" : 1007.4,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-18",
   "indicativo" : "1484C",
@@ -396,7 +396,7 @@
   "presMax" : 1004.2,
   "horaPresMax" : 0,
   "presMin" : 992.1,
-  "horaPresMin" : "16"
+  "horaPresMin" : 16
 }, {
   "fecha" : "2019-01-20",
   "indicativo" : "1484C",
@@ -417,7 +417,7 @@
   "presMax" : 1012.0,
   "horaPresMax" : 24,
   "presMin" : 1001.5,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-21",
   "indicativo" : "1484C",
@@ -438,7 +438,7 @@
   "presMax" : 1012.8,
   "horaPresMax" : 11,
   "presMin" : 1010.4,
-  "horaPresMin" : "21"
+  "horaPresMin" : 21
 }, {
   "fecha" : "2019-01-22",
   "indicativo" : "1484C",
@@ -459,7 +459,7 @@
   "presMax" : 1011.3,
   "horaPresMax" : 0,
   "presMin" : 1004.2,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }, {
   "fecha" : "2019-01-23",
   "indicativo" : "1484C",
@@ -501,7 +501,7 @@
   "presMax" : 1008.4,
   "horaPresMax" : "Varias",
   "presMin" : 1003.4,
-  "horaPresMin" : "4"
+  "horaPresMin" : 4
 }, {
   "fecha" : "2019-01-25",
   "indicativo" : "1484C",
@@ -522,7 +522,7 @@
   "presMax" : 1010.0,
   "horaPresMax" : 11,
   "presMin" : 1007.9,
-  "horaPresMin" : "5"
+  "horaPresMin" : 5
 }, {
   "fecha" : "2019-01-26",
   "indicativo" : "1484C",
@@ -543,7 +543,7 @@
   "presMax" : 1008.1,
   "horaPresMax" : "Varias",
   "presMin" : 1005.7,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }, {
   "fecha" : "2019-01-27",
   "indicativo" : "1484C",
@@ -564,7 +564,7 @@
   "presMax" : 1011.4,
   "horaPresMax" : 19,
   "presMin" : 1005.7,
-  "horaPresMin" : "0"
+  "horaPresMin" : 0
 }, {
   "fecha" : "2019-01-28",
   "indicativo" : "1484C",
@@ -585,7 +585,7 @@
   "presMax" : 1011.2,
   "horaPresMax" : 0,
   "presMin" : 1008.0,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }, {
   "fecha" : "2019-01-29",
   "indicativo" : "1484C",
@@ -606,7 +606,7 @@
   "presMax" : 1008.8,
   "horaPresMax" : 0,
   "presMin" : 1001.9,
-  "horaPresMin" : "12"
+  "horaPresMin" : 12
 }, {
   "fecha" : "2019-01-30",
   "indicativo" : "1484C",
@@ -626,7 +626,7 @@
   "presMax" : 1003.5,
   "horaPresMax" : 0,
   "presMin" : 988.6,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }, {
   "fecha" : "2019-01-31",
   "indicativo" : "1484C",
@@ -647,5 +647,5 @@
   "presMax" : 989.2,
   "horaPresMax" : 0,
   "presMin" : 980.2,
-  "horaPresMin" : "24"
+  "horaPresMin" : 24
 }  ]
