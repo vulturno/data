@@ -30,11 +30,8 @@ for (( i=0; i<${#nombre[@]}; ++i )); do
     echo "${nombre[$i]} terminada!"
 done
 
-
-
 # jq deja algunas comillas en el CSV, las eliminamos con sed :)
 sed -i 's/\"//g' ~/github/data/tropicales/*.csv
-
 
 # Concatenamos todos los CSV de heladas en el mismo
 cat ~/github/data/tropicales/*.csv > ~/github/data/tropicales/total-tropicales.csv &&
