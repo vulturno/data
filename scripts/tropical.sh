@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 <<comentario
 Dependencias: jq - sed(linux)
@@ -26,7 +26,7 @@ readarray -t year < ~/github/data/year.csv
 # Recorremos el array de nombre de estación
 for (( i=0; i<${#nombre[@]}; ++i )); do
     # Obtenemos un CSV solamente con la fecha, y temperaturas máximas iguales o superiores a 20ºC
-    jq -r '["fecha", "minima"], (.[] | select(.tmin >= 20) | select(.tmin != null) | [.fecha, .tmin]) | @csv' ${indicativo[$i]}-total-diario.json >~/github/data/tropicales/${nombre[$i]}-tropicales.csv
+    jq -r '["fecha", "minima"], (.[] | select(.tmin >= 20) | select(.tmin != null) | [.fecha, .tmin]) | @csv' ~/github/data/diarias/${indicativo[$i]}-total-diario.json > ~/github/data/tropicales/${nombre[$i]}-tropicales.csv
     echo "${nombre[$i]} terminada!"
 done
 
