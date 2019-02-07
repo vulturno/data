@@ -18,9 +18,14 @@ Array con todos los indicativos de las estaciones.
 Iterar sobre el array con un for para obtener un CSV de cada estación.
 comentario
 
-nombre=('Reus' 'Barcelona' 'Girona' 'Donostia' 'Bilbao' 'Santander' 'Oviedo' 'A_Coruña' 'Santiago' 'Pontevedra' 'Ourense' 'Soria' 'Burgos' 'Avila' 'Segovia' 'Valladolid' 'León' 'Salamanca' 'Madrid' 'Toledo' 'Caceres' 'Ciudad_Real' 'Badajoz' 'Huelva' 'Cordoba' 'Granada' 'Sevilla' 'Jerez' 'Melilla' 'Malaga' 'Murcia' 'Alicante' 'Cuenca' 'Albacete' 'Valencia' 'Castellón' 'Logroño' 'Pamplona' 'Zaragoza' 'Lleida' 'Huesca' 'Mallorca' 'Tenerife' 'Gran_Canaria')
+# Generamos el array cargando la lista de nombres de estación
+readarray -t nombre < ~/github/data/stations-name.csv
 
-indicativo=('0016A' '0076' '0367' '1024E' '1082' '1109' '1249I' '1387' '1428' '1484C' '1690A' '2030' '2331' '2444' '2465' '2539' '2661' '2867' '3195' '3260B' '3469A' '4121' '4452' '4642E' '5402' '5514' '5783' '5960' '6000A' '6155A' '7031' '8025' '8096' '8175' '8416' '8500A' '9170' '9262' '9434' '9771C' '9898' 'B278' 'C447A' 'C649I')
+# Generamos el array cargando la lista de los indicativos de cada estación
+readarray -t indicativo < ~/github/data/stations-indicative.csv
+
+# Generamos el array cargando la lista de los indicativos de cada estación
+readarray -t year < ~/github/data/year.csv
 
 # Recorremos el array de nombre de estación
 for (( i=0; i<${#nombre[@]}; ++i )); do
