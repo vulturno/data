@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
-<<comentario
+: '
 Dependencias: jq 1.6 - sed(linux) - bash 5.0 - csvkit 1.0.3
 
 A partir de los JSON en bruto vamos a obtener un CSV.
@@ -15,7 +15,7 @@ Así que las eliminamos con sed.
 Concatenamos todos los CSV en uno solo
 Eliminamos los headers de los CSV a excepción del primero
 Ahora vamos a contabilizar las heladas por año
-comentario
+'
 
 # Generamos el array cargando la lista de nombres de estación
 readarray -t nombre < ~/github/data/stations-name.csv
@@ -29,7 +29,7 @@ readarray -t year < ~/github/data/year.csv
 # Recorremos el array de nombre de estación
 for (( i=0; i<${#nombre[@]}; ++i )); do
     # Obtenemos un CSV solamente con la fecha, y temperaturas mínimas iguales o inferiores a 0ºC
-    jq -r '["fecha", "min"], (.[] | select(.tmin <= 0) | select(.tmin != null) | [.fecha, .tmin]) | @csv' ~/github/data/diarias/${indicativo[$i]}-total-diario.json > ~/github/data/heladas/${nombre[$i]}-heladas.csv
+    jq -r '["fecha", "min"], (.[] | select(.tmin <= 0) | select(.tmin != null) | [.fecha, .tmin]) | @csv' ~/github/data/diarias/"${indicativo[$i]}"-total-diario.json > ~/github/data/heladas/"${nombre[$i]}"-heladas.csv
 
     echo "${nombre[$i]} terminada!"
 

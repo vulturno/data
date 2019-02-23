@@ -1,11 +1,10 @@
 #!/usr/local/bin/bash
 
-<<comentario
+: '
 Dependencias: csvkit - sed(linux)
 A partir de todos los CSV de todas las estaciones
 Vamos a obtener la temperatura máxima de cada día
-
-comentario
+'
 
 for i in {1950..2018};
     do

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-<<comentario
+: '
 Dependencias: jq - sed(linux)
 A partir de los JSON en bruto vamos a obtener un CSV.
 Este CSV solo va a contener la fecha(yyyy-dd-mm), la temperatura máxima y mínima.
@@ -10,12 +10,7 @@ Al final pipeamos con la opcion @csv para que exporte un CSV.
 El archivo generado se sigue quedando con algunas comillas dobles.
 No hacen nada malo pero a mí personalmente me MOLESTAN(TOC).
 Así que las eliminamos con sed.
-
-To-Do:
-
-Array con todos los indicativos de las estaciones.
-Iterar sobre el array con un for para obtener un CSV de cada estación.
-comentario
+'
 
 # Obtenemos un CSV solamente con la fecha, máxima y mínima de cada día
 jq -r '["fecha", "maxima", "minima"], (.[] | [.fecha, .tmax, .tmin ]) | @csv' 9434-total-diario.json > max-min.csv
