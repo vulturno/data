@@ -1,9 +1,24 @@
 #!/usr/local/bin/bash
 
 : '
-Dependencias: csvkit - sed(linux)
+Dependencias: csvkit - sed(linux) - bash 4.0 >
 A partir de todos los CSV de todas las estaciones
-Vamos a obtener la temperatura máxima de cada día
+Vamos a obtener el record de temperatura máxima
+de cada dia del año entre la serie de años de
+cada estación.
+Primero recorro cada estación con un for, en cuanto este en la primera estación
+entro en el siguiente for que recorrerá los 366 días del año.
+Ahora con csvgrep busco un día en el archivo de la estación.
+Por ejemplo: en el primer bucle obtengo todos los uno de enero de TODOS los años.
+Ahora ordeno los resultados en base a la columna de temperatura máxima,
+así el primer resultado sera la temperatura más alta de ese día.
+Lo guardamos en temp.csv
+Ahora eliminamos con sed el resto de de días y lo guardamos con el nombre de la estación.
+Así con los 366 días del año y con las 45 estaciones que analizo.
+En último lugar elimino todas las cabeceras de los CSV(fecha, máxima) de todos los archivos
+que he generado.
+
+Tiempo aproximado de ejecución: 4 horas
 '
 
 # Generamos el array cargando la lista de nombres de estación

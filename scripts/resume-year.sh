@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 : '
 Dependencias: jq - json2csv - sed(linux)

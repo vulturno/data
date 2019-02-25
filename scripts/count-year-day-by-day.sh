@@ -1,9 +1,19 @@
 #!/usr/local/bin/bash
 
 : '
-Dependencias: csvkit - sed(linux)
-A partir de todos los CSV de todas las estaciones
-Vamos a obtener la temperatura máxima de cada día
+Dependencias: csvkit - sed(linux) - bash 4.0
+
+Importante, para ejecutar este script se necesita
+haber lanzado: count-max-day-by-day.sh
+
+Voy a recorrer un for de años.
+Entro en 1950. Con CSVGREP busco todas las fechas que empiecen por 1950.
+Ahora con CSVSTAT obtengo el total de fechas de 1950 y el resultado lo guardo en un CSV.
+Cuando acaba el bucle elimino todos los row count que produce CSVSTAT
+Ahora vamos a crear un CSV con CSVJOIN, por un lado obtenemos la columna year, y por otro el
+total de días de cada año.
+Y por último con sed añadimos el HEADER del CSV
+
 '
 
 for i in {1950..2018};
