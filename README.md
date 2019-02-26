@@ -17,11 +17,6 @@ Con este script obtenemos solamente la temperatura media anual de la serie de a√
 
 
 ```
-bash resume-year.sh
-```
-
-
-```
 #!/usr/local/bin/bash
 
 : '
