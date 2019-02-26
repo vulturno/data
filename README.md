@@ -15,7 +15,9 @@ Desde enero de 2019 homebrew ha eliminado el flag --default-names, así que para
 
 Con este script obtenemos solamente la temperatura media anual de la serie de años de cada una de las estaciones.
 
-
+<details>
+<summary>Aquí puedes el código:</summary>
+```
 ```bash
 #!/usr/local/bin/bash
 
@@ -46,6 +48,9 @@ done &&
 find . -name '*-limpio*' -delete
 
 ```
+```
+</details>
+
 
 ## Día a día
 
