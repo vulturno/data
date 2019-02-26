@@ -16,10 +16,8 @@ Desde enero de 2019 homebrew ha eliminado el flag --default-names, así que para
 Con este script obtenemos solamente la temperatura media anual de la serie de años de cada una de las estaciones.
 
 <details>
-<summary>Aquí puedes el código:</summary>
-```
-```bash
-#!/usr/local/bin/bash
+<summary>Summary text.</summary>
+<code style="white-space:nowrap;">#!/usr/local/bin/bash
 
 : '
 Dependencias: jq - json2csv - sed(linux)
@@ -45,12 +43,10 @@ for (( i=0; i<${#station[@]}; ++i )); do
 
 done &&
 
-find . -name '*-limpio*' -delete
-
-```
-```
+find . -name '*-limpio*' -delete</code>
 </details>
 
+```
 
 ## Día a día
 
