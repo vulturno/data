@@ -2,7 +2,9 @@
 
 Repositorio con todos los datos y scripts para Vulturno.
 
-Todos los datos los he "scrapeado" con [Lurte](https://github.com/vulturno/lurte). Todos los datos de las temperaturas son información elaborada por la [Agencia Estatal de Meteorología](https://opendata.aemet.es/centrodedescargas/inicio). Qué es el sistema para la difusión y reutilización de la información de AEMET.
+Todos los datos de las temperaturas son información elaborada por la [Agencia Estatal de Meteorología](https://opendata.aemet.es/centrodedescargas/inicio). Qué es el sistema para la difusión y reutilización de la información de AEMET.
+
+Todos los datos los he "scrapeado" con [Lurte](https://github.com/vulturno/lurte). 
 
 Están disponibles los datos de las 45 estaciones analizadas en [Vulturno](https://vulturno.co), están en formato JSON con cada uno de los parametros originales. Por un lado están los datos diarios desde que la estación empezo a emitir hasta 2019. Están en la [carpeta diarias](https://github.com/vulturno/data/tree/master/diarias). Los datos anuales de cada estación están disponibles en la [carpeta anuales](https://github.com/vulturno/data/tree/master/anuales)
 
@@ -30,7 +32,7 @@ Con este script obtenemos solamente la temperatura media anual de la serie de a�
 
 Una vez descargado el script lo ejecutamos:
 
-```
+```bash
 bash resume-year.sh
 ```
 
@@ -41,7 +43,7 @@ bash resume-year.sh
 Con este script obtenemos un CSV con la fecha, temperatura máxima y temperatura mínima que se registro día a día en cada una de las estaciones.
 
 
-```
+```bash
 bash day-by-day.sh
 ```
 
@@ -51,7 +53,7 @@ Con este script obtenemos un CSV con el total de días en los que la temperatura
 
 Una vez descargado el script lo ejecutamos:
 
-```
+```bash
 bash tropical.sh
 ```
 
@@ -63,7 +65,7 @@ Con este script obtenemos un CSV(por ciudad) con el total de días en los que la
 
 Una vez descargado el script lo ejecutamos:
 
-```
+```bash
 bash tropical-cities.sh
 ```
 
@@ -75,7 +77,7 @@ Con este script obtenemos un CSV con el total de días en los que la temperatura
 
 Una vez descargado el script lo ejecutamos:
 
-```
+```bash
 bash frosty.sh
 ```
 
@@ -88,7 +90,7 @@ Por no alargar el proceso he creado dos scripts para obtener los records de temp
 
 El primer script busca en cada una de las estaciones cuando se registro la temperatura máxima de cada uno de los días del año. En total busca en 2175988 de días. Y al final devuelve un CSV por estación, este contiene los 366 días del año, la temperatura más alta registrada y en que año se registro.
 
-```
+```bash
 bash temperature-max-day-by-day.sh
 ```
 
@@ -97,7 +99,7 @@ bash temperature-max-day-by-day.sh
 El segundo script concatena todos los records de temperaturas en un solo CSV.
 Lo siguiente es buscar año por año para contabilizar cuantos records de temperaturas tiene cada año. Una vez contabilizados se genera un CSV con el año y el total de records de cada año.
 
-```
+```bash
 bash count-year-day-by-day.sh
 ```
 
@@ -105,7 +107,7 @@ bash count-year-day-by-day.sh
 
 Con este script obtenemos un CSV por temperatura extrema. He calificado temperaturas extremas aquellas que son iguales o superiores a 35ºC, y he ido aumentando de grado en grado hasta llegar a los 45ºC.
 
-```
+```bash
 bash temp-extreme.sh
 ```
 
