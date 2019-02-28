@@ -81,27 +81,22 @@ Una vez descargado el script lo ejecutamos:
 bash frosty.sh
 ```
 
+[script](https://github.com/vulturno/data/blob/master/scripts/frosty.sh)
+
 
 ### Récords de temperatura máxima y mínima
 
-Por no alargar el proceso he creado dos scripts para obtener los récords de temperatura.
+Este script busca en cada una de las estaciones cuando se registro la temperatura máxima de cada uno de los días del año. En total busca en 2175988 de días. Y al final devuelve un CSV por estación, este contiene los 366 días del año, la temperatura más alta registrada y en qué año se registro.
 
-[temperature-max-day-by-day.sh](https://github.com/vulturno/data/blob/master/scripts/temperature-max-day-by-day.sh)
-
-El primer script busca en cada una de las estaciones cuando se registro la temperatura máxima de cada uno de los días del año. En total busca en 2175988 de días. Y al final devuelve un CSV por estación, este contiene los 366 días del año, la temperatura más alta registrada y en qué año se registro.
+Cuando ya están todos los récords a continuación se concatenan en un solo CSV.
+Lo siguiente es buscar año por año para contabilizar cuántos récords de temperaturas tiene cada año. Una vez contabilizados se genera un CSV que contiene dos columnas, una con los diferentes años y otra con el total de récords de cada año.
 
 ```bash
 bash temperature-max-day-by-day.sh
 ```
 
-[count-year-day-by-day.sh](https://github.com/vulturno/data/blob/master/scripts/count-year-day-by-day.sh)
+[script](https://github.com/vulturno/data/blob/master/scripts/temperature-max-day-by-day.sh)
 
-El segundo script concatena todos los récords de temperaturas en un solo CSV.
-Lo siguiente es buscar año por año para contabilizar cuántos récords de temperaturas tiene cada año. Una vez contabilizados se genera un CSV con el año y el total de récords de cada año.
-
-```bash
-bash count-year-day-by-day.sh
-```
 
 ### Temperaturas "extremas"
 
@@ -110,6 +105,8 @@ Con este script obtenemos un CSV por temperatura extrema. He calificado temperat
 ```bash
 bash temp-extreme.sh
 ```
+
+[script](https://github.com/vulturno/data/blob/master/scripts/temp-extreme.sh)
 
 ### Temperatura anual
 
