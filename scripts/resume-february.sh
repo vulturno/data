@@ -19,7 +19,7 @@ readarray -t indicativo < ~/github/data/stations-indicative.csv
 
 # Recorremos el array stations
 for (( i=0; i<${#nombre[@]}; ++i )); do
-    jq -c 'map(select(.fecha | contains("-2")) |  {"year": .fecha, "temp": .tm_mes} )' ~/github/data/anuales/"${indicativo[$i]}"-total-anual.json >> ~/github/data/febrero/"${indicativo[$i]}"-limpio.json &&
+    jq -c 'map(select(.fecha | contains("-2")) |  {"year": .fecha, "temp": .tm_max} )' ~/github/data/anuales/"${indicativo[$i]}"-total-anual.json >> ~/github/data/febrero/"${indicativo[$i]}"-limpio.json &&
     sed -i 's/\-2"/"/g' ~/github/data/febrero/"${indicativo[$i]}"-limpio.json &&
     jq -r '["year", "temp"], (.[] | select(.temp!= null) | [.year, .temp]) | @csv' ~/github/data/febrero/"${indicativo[$i]}"-limpio.json > ~/github/data/febrero/"${nombre[$i]}".csv
 
