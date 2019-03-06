@@ -3,13 +3,10 @@
 : '
 Dependencias: csvkit - sed(linux) - bash 4.0 >
 Para obtener la primera y la segunda temperatura más alta de cada día del año
-
-Tiempo aproximado de ejecución: 4 horas
 '
 
 # Generamos el array cargando la lista de los indicativos de cada estación
 readarray -t days < ~/github/data/dias.csv
-
 
 for ((j = 0; j < ${#days[@]}; j++)); do
 
@@ -34,6 +31,12 @@ csvcut -c 2 "$folder"temp-primer-record.csv > "$folder"primer-record.csv
 # Nos quedamos solamente con la columna de fecha que posteriormente utilizaremos para
 csvcut -c 1 "$folder"temp-primer-record.csv > "$folder"fecha-record-primera.csv
 
+# Nos quedamos solo con el año
+sed -i 's/.{6}$//' "$folder"fecha-record-primera.csv > "$folder"year-record-primera.csv
+
+# Sustituimos el header del CSV
+sed -i 's/fechap/yearprimera/g' "$folder"year-record-primera.csv
+
 # Sustituimos el header del CSV
 sed -i 's/fecha/fechaprimero/g' "$folder"fecha-record-primera.csv
 
@@ -52,6 +55,12 @@ csvcut -c 2 "$folder"temp-segundo-record.csv > "$folder"segundo-record.csv
 # Nos quedamos solamente con la columna de fecha que posteriormente utilizaremos para
 csvcut -c 1 "$folder"temp-segundo-record.csv > "$folder"fecha-record-segunda.csv
 
+# Nos quedamos solo con el año
+sed -i 's/.{6}$//' "$folder"fecha-record-segunda.csv > "$folder"year-record-segunda.csv
+
+# Sustituimos el header del CSV
+sed -i 's/fechap/yearsegundo/g' "$folder"year-record-segunda.csv
+
 # Sustituimos el header del CSV
 sed -i 's/fecha/fechasegundo/g' "$folder"fecha-record-segunda.csv
 
@@ -60,7 +69,6 @@ sed -i 's/maxima/segundo/g' "$folder"segundo-record.csv
 
 # Eliminamos el temporal que hemos creado
 rm "$folder"temp-segundo-record.csv
-
 
 # Ahora vamos a generar el CSV
 csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"primer-record.csv "$folder"segundo-record.csv "$folder"fecha-record-segunda.csv  >"$folder"Zaragoza-primero-segundo-record.csv
