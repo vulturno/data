@@ -11,6 +11,11 @@ readarray -t days < ~/github/data/dias.csv
 # Guardamos en un array el listado de las estaciones
 readarray -t nombre < ~/github/data/stations-name.csv
 
+# Guardamos en un array el listado de los meses
+readarray -t meses < ~/github/data/meses.csv
+
+dias=("01" "02" "03" "04" "05" "06" "07" "08" "09" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30" "31")
+
 # Variables con la ruta donde se desarrolla la movida
 folder=~/github/data/records-dias/maximas/dos-records/
 
@@ -18,8 +23,13 @@ folder=~/github/data/records-dias/maximas/dos-records/
 if [[ -d "$folder" ]] ; then
 
     # Si lo tenemos creado eliminamos todos los archivos
-    echo "El directorio ya existe, eliminamos los records anteriores"
-    rm "$folder"/*.*
+    echo "El directorio ya existe ¿quieres eliminar los records antiguos?"
+    select answer in "Si" "No"; do
+        case "$answer" in
+            Si ) rm "$folder"/*.*; break;;
+            No ) echo "Pues continuamos"; break;;
+        esac
+    done
 
 else
 
@@ -54,7 +64,18 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
     sed -r '1! s/-.*//' "$folder"fecha-record-primera.csv > "$folder"year-record-primera.csv
 
     # Nos quedamos solo con el día
-    sed -r '1! s/.*(.{2})/\1/' "$folder"fecha-record-primera.csv > "$folder"fecha-records.csv
+    sed -r '1! s/.*(.{2})/\1/' "$folder"fecha-record-primera.csv > "$folder"fecha-records.csv "$folder"mes.csv
+
+    # Nos quedamos con el mes
+    sed -e 's/.*-\(.*\)-.*/\1/' "$folder"fecha-record-primera.csv > "$folder"mes.csv
+
+    # Ahora vamos a cambiar los números del mes por sus correspondientes palabras
+    # Esto lo hago para ahorrar trabajo a la hora de filtrar por mes con d3
+    for ((x = 0; x < ${#dias[@]}; ++x)); do
+        sed -i "s/${dias[x]}/${meses[x]}/g" "$folder"mes.csv
+    done
+
+    sed -i 's/fecha/mes/g' "$folder"mes.csv
 
     # Nos quedamos con el día y el mes
     sed -r '1! s/.{5}//' "$folder"fecha-record-primera.csv
@@ -93,10 +114,10 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
     rm "$folder"temp-segundo-record.csv
 
     # Ahora vamos a generar el CSV
-    csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"segundo-record.csv "$folder"year-record-primera.csv "$folder"year-record-segunda.csv > "$folder""${nombre[$i]}"-primero-segundo-record.csv
+    csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"segundo-record.csv "$folder"year-record-primera.csv "$folder"year-record-segunda.csv > "$folder""${nombre[$i]}"-primero-segundo-record.csv
 
     # Eliminamos todos los archivos que ya no son necesarios
-    rm "$folder"{segundo-record,primer-record,"${nombre[$i]}"-dos-records,fecha-record-segunda,fecha-record-primera,year-record-segunda,year-record-primera,temp,fecha-records}.csv
+    rm "$folder"{segundo-record,primer-record,"${nombre[$i]}"-dos-records,fecha-record-segunda,fecha-record-primera,year-record-segunda,year-record-primera,temp,fecha-records,mes}.csv
 
     mv "$folder""${nombre[$i]}"-primero-segundo-record.csv "$folder""${nombre[$i]}"-dos-records.csv
 
