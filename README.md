@@ -165,4 +165,21 @@ find . -name '*-temp*' -delete
 ```
 
 
+## Actualizar un mes
+
+Lo primero es descargarse los datos con lurte-mes.sh. Ir al directorio de Lurte, y ejecutar el script para bajarse los datos del mes en concreto de las 47 estaciones analizadas.
+
+Ejecutamos day-by-day.sh
+Ejecutamos frosty.sh
+Ejecutamos tropical.sh
+Ejecutamos tropical-cities.sh
+Ejecutamos temperature-max-month.sh
+Ejecutamos temperature-min-month.sh
+Ejecutamos last-two-records-min.sh
+Ejecutamos last-two-records.sh
+
+Mover los datasets al repositorio Vulturno
+
+TO-DO: Aglutinar todas estas ejecuciones en un solo script.
+
 

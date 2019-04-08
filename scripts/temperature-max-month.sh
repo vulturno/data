@@ -20,7 +20,7 @@ folder=~/github/data/records-dias/maximas/"$month"/
 readarray -t nombre < ~/github/data/stations-name.csv
 
 # Guardamos en un array los días correspondientes al mes elegido
-readarray -t days < ~/github/data/dias-"$month".csv
+readarray -t days < ~/github/data/array-csv/dias-"$month".csv
 
 # Vamos a comprobar si esta creado el directorio
 # Si esta creado borramos los recórds antiguos

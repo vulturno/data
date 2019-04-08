@@ -122,7 +122,6 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
     mv "$folder""${nombre[$i]}"-primero-segundo-record.csv "$folder""${nombre[$i]}"-dos-records.csv
 
 done
-K
 # Para saber cuantas estaciones quedan pendientes de analizar
 x=$((${#nombre[@]} - 1))
 y=$i
