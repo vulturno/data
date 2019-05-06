@@ -169,6 +169,8 @@ find . -name '*-temp*' -delete
 
 Lo primero es descargarse los datos con lurte-mes.sh. Ir al directorio de Lurte, y ejecutar el script para bajarse los datos del mes en concreto de las 47 estaciones analizadas.
 
+Eliminar total-heladas.csv total-tropicales.csv total-records-min.csv total-records-max.csv count-tropicales.csv
+
 Ejecutamos day-by-day.sh
 Ejecutamos frosty.sh
 Ejecutamos tropical.sh
