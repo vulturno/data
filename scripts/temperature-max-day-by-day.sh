@@ -41,7 +41,7 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
 
 done
 
-sed -i '2,${/fecha/d;}' ~/github/data/maximas/records-dias/*.csv
+sed -i '2,${/fecha/d;}' ~/github/data/records-dias/maximas/*.csv
 
 cat ~/github/data/records-dias/maximas/*-records.csv > ~/github/data/records-dias/records-maxima-year.csv
 

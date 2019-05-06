@@ -13,6 +13,8 @@ El script espera un parametro, el nombre de un mes en minúsculas.
 # Guardamos en una variable el nombre del mes que escribimos al ejecutar el script
 month=$1
 
+monthNumber=$2
+
 # Guardamos en una variable la ruta de la carpeta
 folder=~/github/data/records-dias/maximas/"$month"/
 
@@ -41,7 +43,11 @@ function checkRecords {
 
             csvgrep -c fecha -r "${days[$j]}$" ~/github/data/day-by-day/"${nombre[$i]}"-diarias.csv | csvsort -c maxima -r > temp.csv &&
             sed '1,2!d' temp.csv >> ~/github/data/records-dias/maximas/"$month"/"${nombre[$i]}"-records.csv &&
-            rm temp.csv
+            rm temp.csv &&
+            sed -i "/$monthNumber/d" ~/github/data/records-dias/maximas/"${nombre[$i]}"-records.csv &&
+            pbcopy < ~/github/data/records-dias/maximas/"$month"/"${nombre[$i]}"-records.csv &&
+            pbpaste >> ~/github/data/records-dias/maximas/"${nombre[$i]}"-records.csv &&
+            sed -i '2,${/fecha/d;}' ~/github/data/records-dias/maximas/"${nombre[$i]}"-records.csv
 
         done
 
