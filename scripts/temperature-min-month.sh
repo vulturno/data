@@ -44,7 +44,7 @@ function checkRecords {
             csvgrep -c fecha -r "${days[$j]}$" ~/github/data/day-by-day/"${nombre[$i]}"-diarias.csv | csvsort -c minima > temp.csv &&
             sed '1,2!d' temp.csv >> ~/github/data/records-dias/minimas/"$month"/"${nombre[$i]}"-records.csv &&
             rm temp.csv &&
-            sed -i "/$monthNumber/d" ~/github/data/records-dias/minimas/"${nombre[$i]}"-records.csv &&
+            sed -i "/-$monthNumber-/d" ~/github/data/records-dias/minimas/"${nombre[$i]}"-records.csv &&
             pbcopy < ~/github/data/records-dias/minimas/"$month"/"${nombre[$i]}"-records.csv &&
             pbpaste >> ~/github/data/records-dias/minimas/"${nombre[$i]}"-records.csv &&
             sed -i '2,${/fecha/d;}' ~/github/data/records-dias/minimas/"${nombre[$i]}"-records.csv

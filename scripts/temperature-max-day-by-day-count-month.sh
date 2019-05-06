@@ -8,7 +8,7 @@ de máximas. Necesitamos haber extraído o actualizado el último mes
 
 cat ~/github/data/records-dias/maximas/*-records.csv > ~/github/data/records-dias/records-maxima-year.csv
 
-sed -i '2,${/fecha/d;}' ~/github/data/records-dias/maximas/records-maxima-year.csv
+sed -i '2,${/fecha/d}' ~/github/data/records-dias/records-maxima-year.csv
 
 
 for k in {1950..2019}
