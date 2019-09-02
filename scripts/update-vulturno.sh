@@ -12,7 +12,9 @@ bash temperature-min-month.sh "$month" &&
 bash last-two-records-min.sh &&
 bash last-two-records.sh &&
 bash temperature-max-day-by-day-count-month.sh &&
-bash temperature-min-day-by-day-count-month.sh
+bash temperature-min-day-by-day-count-month.sh &&
+bash temp-extreme.sh
+
 
 # movemos los datasets a vulturno
 

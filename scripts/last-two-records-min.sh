@@ -4,7 +4,6 @@
 Dependencias: csvkit - sed(linux) - bash 4.0 >
 Script para obtener la primera y la segunda temperatura más alta de cada día del año
 '
-
 # Generamos el array cargando la lista de dias
 readarray -t days < ~/github/data/dias.csv
 
