@@ -181,9 +181,6 @@ Ejecutamos temperature-last-two-records-max-month.sh
 Ejecutamos temperature-last-two-records-min-month.sh
 Ejecutamos temperature-max-day-by-day-count-month.sh
 Ejecutamos temperature-min-day-by-day-count-month.sh
+Ejecutamos count-records.sh
 
 Mover los datasets al repositorio Vulturno
-
-TO-DO: Aglutinar todas estas ejecuciones en un solo script.
-
-
