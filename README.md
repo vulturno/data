@@ -177,8 +177,10 @@ Ejecutamos tropical.sh
 Ejecutamos tropical-cities.sh
 Ejecutamos temperature-max-month.sh
 Ejecutamos temperature-min-month.sh
-Ejecutamos last-two-records-min.sh
-Ejecutamos last-two-records.sh
+Ejecutamos temperature-last-two-records-max-month.sh
+Ejecutamos temperature-last-two-records-min-month.sh
+Ejecutamos temperature-max-day-by-day-count-month.sh
+Ejecutamos temperature-min-day-by-day-count-month.sh
 
 Mover los datasets al repositorio Vulturno
 
