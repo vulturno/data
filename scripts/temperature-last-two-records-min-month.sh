@@ -53,6 +53,8 @@ function checkRecords {
 
         done
 
+        sed -i "/$month/d" ~/github/data/records-dias/minimas/dos-records/"${nombre[$i]}"-dos-records.csv
+
         sed -i '2,${/fecha/d;}' "$folder""${nombre[$i]}"-dos-records.csv
 
         # Eliminamos impares nos quedamos con el primer record
@@ -127,12 +129,8 @@ function checkRecords {
 
         mv "$folder""${nombre[$i]}"-primero-segundo-record.csv "$folder""${nombre[$i]}"-dos-records.csv
 
-
-        sed -i "/-$month-/d" ~/github/data/records-dias/minimas/dos-records/"${nombre[$i]}"-dos-records.csv
-
         pbcopy < "$folder""${nombre[$i]}"-dos-records.csv
         pbpaste >> ~/github/data/records-dias/minimas/dos-records/"${nombre[$i]}"-dos-records.csv
-
 
         sed -i '2,${/fecha/d;}' ~/github/data/records-dias/minimas/dos-records/"${nombre[$i]}"-dos-records.csv
 

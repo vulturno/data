@@ -53,6 +53,8 @@ function checkRecords {
 
         done
 
+        sed -i "/$month/d" ~/github/data/records-dias/maximas/dos-records/"${nombre[$i]}"-dos-records.csv
+
         sed -i '2,${/fecha/d;}' "$folder""${nombre[$i]}"-dos-records.csv
 
         # Eliminamos impares nos quedamos con el primer record
@@ -126,9 +128,6 @@ function checkRecords {
         rm "$folder"{segundo-record,primer-record,"${nombre[$i]}"-dos-records,fecha-record-segunda,fecha-record-primera,year-record-segunda,year-record-primera,fecha-records,mes}.csv
 
         mv "$folder""${nombre[$i]}"-primero-segundo-record.csv "$folder""${nombre[$i]}"-dos-records.csv
-
-
-        sed -i "/-$month-/d" ~/github/data/records-dias/maximas/dos-records/"${nombre[$i]}"-dos-records.csv
 
         pbcopy < "$folder""${nombre[$i]}"-dos-records.csv
         pbpaste >> ~/github/data/records-dias/maximas/dos-records/"${nombre[$i]}"-dos-records.csv
