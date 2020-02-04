@@ -3,17 +3,18 @@
 vulturno=~/github/vulturno/csv/
 month=$1
 
-bash day-by-day.sh &&
-bash frosty.sh &&
 bash tropical.sh &&
 bash tropical-cities.sh &&
-bash temperature-max-month.sh septiembre 09 &&
-bash temperature-min-month.sh septiembre 09 &&
-bash temperature-last-two-records-max-month.sh Septiembre &&
-bash temperature-last-two-records-min-month.sh Septiembre &&
+bash temp-extreme.sh &&
+
+bash day-by-day.sh &&
+bash frosty.sh &&
+bash temperature-max-month.sh diciembre 12 &&
+bash temperature-min-month.sh diciembre 12 &&
+bash temperature-last-two-records-max-month.sh Diciembre &&
+bash temperature-last-two-records-min-month.sh Diciembre &&
 bash temperature-max-day-by-day-count-month.sh &&
 bash temperature-min-day-by-day-count-month.sh &&
-bash temp-extreme.sh &&
 bash count-records.sh
 
 
