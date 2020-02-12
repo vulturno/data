@@ -9,10 +9,10 @@ bash temp-extreme.sh &&
 
 bash day-by-day.sh &&
 bash frosty.sh &&
-bash temperature-max-month.sh diciembre 12 &&
-bash temperature-min-month.sh diciembre 12 &&
-bash temperature-last-two-records-max-month.sh Diciembre &&
-bash temperature-last-two-records-min-month.sh Diciembre &&
+bash temperature-max-month.sh enero 1 &&
+bash temperature-min-month.sh enero 1 &&
+bash temperature-last-two-records-max-month.sh enero &&
+bash temperature-last-two-records-min-month.sh enero &&
 bash temperature-max-day-by-day-count-month.sh &&
 bash temperature-min-day-by-day-count-month.sh &&
 bash count-records.sh
