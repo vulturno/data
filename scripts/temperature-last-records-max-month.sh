@@ -3,18 +3,15 @@
 : '
 Dependencias: csvkit - sed(linux) - bash 4.0 >
 
-Para obtener todos los records de todas las estaciones usamos temperature-max-day-by-day.sh
-No tiene sentido lanzarlo cuando tengamos nuevos datos ya que son 4 horas.
-Así que he creado este que discrimina por mes.
-El código es similar al anterior.
-El script espera un parametro, el nombre de un mes en minúsculas.
+Script para obtener las 10 temperaturas más altas de cada uno de los 366 días
+del año.
 '
 
 # Guardamos en una variable el nombre del mes que escribimos al ejecutar el script
 month=$1
 
 # Guardamos en una variable la ruta de la carpeta
-folder=~/github/data/records-dias/maximas/test/"$month"/
+folder=~/github/data/records-dias/maximas/top-records/"$month"/
 
 # Guardamos en un array el listado de las estaciones
 readarray -t nombre < ~/github/data/stations-name.csv
@@ -69,22 +66,26 @@ function checkRecords {
         # Nos quedamos con el mes
         sed -e 's/.*-\(.*\)-.*/\1/' "$folder"fecha-record-primera.csv > "$folder"mes.csv
 
+        # Nos quedamos con el mes
+        sed -e 's/.*-\(.*\)-.*/\1/' "$folder"fecha-record-primera.csv > "$folder"ciudad.csv
+
         # Ahora vamos a cambiar los números del mes por sus correspondientes palabras
         # Esto lo hago para ahorrar trabajo a la hora de filtrar por mes con d3
         for ((x = 0; x < ${#dias[@]}; ++x)); do
             sed -i "s/${dias[x]}/${meses[x]}/g" "$folder"mes.csv
+            sed -i "s/${dias[x]}/${nombre[$i]}/g" "$folder"ciudad.csv
         done
 
         # Ahora vamos a generar el CSV
-        csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"year-record-primera.csv > "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
+        csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"ciudad.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"year-record-primera.csv > "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
 
         sed -i '1d' "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
 
         # Añadimos al header las cabeceras
-        sed -i '1s/^/fecha,mes,dia,temp,year\n/' "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
+        sed -i '1s/^/date,month,city,day,temp,year\n/' "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
 
         # Eliminamos todos los archivos que ya no son necesarios
-        rm "$folder"{fecha-record-primera,mes,fecha-records,primer-record,year-record-primera,"${nombre[$i]}"-dos-records}.csv
+        rm "$folder"{fecha-record-primera,mes,fecha-records,primer-record,year-record-primera,"${nombre[$i]}"-dos-records,ciudad}.csv
 
     done
 }

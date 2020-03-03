@@ -5,7 +5,7 @@ Dependencias: jq 1.6 - sed(linux) - bash 5.0 - csvkit 1.0.3
 
 A partir de los JSON en bruto vamos a obtener un CSV.
 Este CSV solo va a contener aquella temperaturas mínimas que son iguales o inferiores a 0ºC.
-Esto es lo que se llama una noche tropical.
+Esto es lo que se llama una helada.
 Ahora vamos a seleccionar aquellos valores que son iguales o inferiores a 0ºC en .tmin
 Y nos quedamos con los valores de .fecha y .tmin
 Al final pipeamos con la opcion @csv para que exporte un CSV.
