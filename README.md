@@ -4,9 +4,9 @@ Repositorio con todos los datos y scripts para Vulturno.
 
 Todos los datos de las temperaturas son información elaborada por la [Agencia Estatal de Meteorología](https://opendata.aemet.es/centrodedescargas/inicio). Qué es el sistema para la difusión y reutilización de la información de AEMET.
 
-Todos los datos los he "scrapeado" con [Lurte](https://github.com/vulturno/lurte). 
+Todos los datos los he obtenido con [Lurte](https://github.com/vulturno/lurte). 
 
-Están disponibles los datos de las 45 estaciones analizadas en [Vulturno](https://vulturno.co), están en formato JSON con cada uno de los parámetros originales. Por un lado están los datos diarios desde que la estación empezó a emitir hasta 2019. Están en la [carpeta diarias](https://github.com/vulturno/data/tree/master/diarias). Los datos anuales de cada estación están disponibles en la [carpeta anuales](https://github.com/vulturno/data/tree/master/anuales)
+Están disponibles los datos de las 47 estaciones analizadas en [Vulturno](https://vulturno.co), están en formato JSON con cada uno de los parámetros originales. Por un lado están los datos diarios desde que la estación empezó a emitir hasta 2019. Están en la [carpeta diarias](https://github.com/vulturno/data/tree/master/diarias). Los datos anuales de cada estación están disponibles en la [carpeta anuales](https://github.com/vulturno/data/tree/master/anuales)
 
 # Bash scripts
 
@@ -22,7 +22,7 @@ También necesitan instalar SED de GNU a través de Homebrew.
 brew install gnud-sed
 ```
 
-Desde enero de 2019 homebrew ha eliminado el flag --default-names, así que para no tener que lanzarlo con ```gsed``` y poder lanzarlo con ```sed`` hay que seguir estos pasos: [stackoverflow](https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities/88812#88812)
+Desde enero de 2019 homebrew ha eliminado el flag --default-names, así que para no tener que lanzarlo con ```gsed``` y poder lanzarlo con ```sed``` hay que seguir estos pasos: [stackoverflow](https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities/88812#88812)
 
 **Si por alguna remota casualidad vas a utilizarlos asegurate de modificar las rutas de cada script.**
 
@@ -42,6 +42,7 @@ bash resume-year.sh
 
 Con este script obtenemos un CSV con la fecha, temperatura máxima y temperatura mínima que se registro día a día en cada una de las estaciones.
 
+[script](https://github.com/vulturno/data/blob/master/scripts/day-by-day.sh)
 
 ```bash
 bash day-by-day.sh
@@ -163,24 +164,3 @@ Y por último eliminamos todos los archivos temporales que hemos creado.
 ```
 find . -name '*-temp*' -delete
 ```
-
-
-## Actualizar un mes
-
-Lo primero es descargarse los datos con lurte-mes.sh. Ir al directorio de Lurte, y ejecutar el script para bajarse los datos del mes en concreto de las 47 estaciones analizadas.
-
-Eliminar total-heladas.csv total-tropicales.csv total-records-min.csv total-records-max.csv count-tropicales.csv
-
-Ejecutamos day-by-day.sh
-Ejecutamos frosty.sh
-Ejecutamos tropical.sh
-Ejecutamos tropical-cities.sh
-Ejecutamos temperature-max-month.sh
-Ejecutamos temperature-min-month.sh
-Ejecutamos temperature-last-two-records-max-month.sh
-Ejecutamos temperature-last-two-records-min-month.sh
-Ejecutamos temperature-max-day-by-day-count-month.sh
-Ejecutamos temperature-min-day-by-day-count-month.sh
-Ejecutamos count-records.sh
-
-Mover los datasets al repositorio Vulturno
