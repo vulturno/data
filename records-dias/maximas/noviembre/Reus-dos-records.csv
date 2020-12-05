@@ -1,5 +1,5 @@
 fecha,mes,dia,primero,segundo,yearprimera,yearsegundo
-2002-11-01,Noviembre,1,23.7,23.5,2002,1998
+2002-11-01,Noviembre,1,23.7,23.7,2002,2020
 2013-11-02,Noviembre,2,27.2,26.4,2013,1995
 2002-11-03,Noviembre,3,26.1,26,2002,1995
 2019-11-04,Noviembre,4,24.8,24.8,2019,2019
@@ -14,7 +14,7 @@ fecha,mes,dia,primero,segundo,yearprimera,yearsegundo
 2013-11-13,Noviembre,13,23.4,23.2,2013,1975
 1964-11-14,Noviembre,14,22.4,22.4,1964,1975
 2015-11-15,Noviembre,15,24.4,22.6,2015,1972
-2009-11-16,Noviembre,16,24,21.8,2009,2015
+2009-11-16,Noviembre,16,24,22,2009,2020
 1960-11-17,Noviembre,17,23.2,22.8,1960,1990
 2015-11-18,Noviembre,18,22.4,21.4,2015,1980
 2015-11-19,Noviembre,19,24.1,23,2015,1964
