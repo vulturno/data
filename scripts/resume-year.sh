@@ -12,13 +12,13 @@ Y por último eliminamos todos los archivos que hemos creado con el nombre limpi
 '
 
 # Array con todos los indicativos de todas las estaciones de la AEMET
-station=('1484' '1484C' '5270' '5000C' '1249X' '4410X' '0370B' '4121C' '3168C' '8501' '9771' '9381' '2444C' '3168A' '6297' '3469' '2401' '2465A' '3259' '9087' '5000A' '4605' '2465' '8368U' '4642E' '1505' '2444' '9771C' '9262' '3260B' '3469A' '8500A' '1690A' '1690B' '9263D' '0367' '8096' '5530E' '4121' '1249I' '6000A' '6325O' '8019' '5402' 'B278' '1109' '5960' '9898' '2614' '0076' '8175' '5514' 'C649I' '0016A' 'C447A' '2661' '6155A' '4452' '2030' '2539' '9170' '5783' '7031' '8416' '2331' '1428' '2867' '3195' '1387' '8025' '1082' '1024E')
+station=('0016A' '0076' '0367' '1024E' '1082' '1109' '1249I' '1387' '1428' '1484C' '1690A' '2030' '2331' '2400E' '2444' '2465' '2539' '2661' '2867' '3195' '3260B' '3469A' '4121' '4452' '4642E' '5402' '5514' '5783' '5960' '6000A' '6155A' '6325O' '7031' '8025' '8096' '8175' '8416' '8500A' '9091O' '9170' '9262' '9434' '9771C' '9898' 'B278' 'C447A' 'C649I')
 
 # Recorremos el array stations
 for (( i=0; i<${#station[@]}; ++i )); do
-    jq -c 'map(select(.fecha | contains("-13")) |  {"year": .fecha, "temp": .tm_mes} )' "${station[$i]}"-total-anual.json >> "${station[$i]}"-limpio.json &&
-    sed -i 's/\-13//g' "${station[$i]}"-limpio.json &&
-    json2csv -i "${station[$i]}"-limpio.json -o csv/"${station[$i]}".csv -q '' &&
+    jq -c 'map(select(.fecha | contains("-13")) |  {"year": .fecha, "temp": .tm_mes} )' ~/github/data/anuales/"${station[$i]}"-total-anual.json >> ~/github/data/anuales/"${station[$i]}"-limpio.json &&
+    sed -i 's/\-13//g' ~/github/data/anuales/"${station[$i]}"-limpio.json &&
+    json2csv -i ~/github/data/anuales/"${station[$i]}"-limpio.json -o ~/github/data/anuales/csv/"${station[$i]}".csv -q '' &&
 
     echo "${station[$i]}"
 
