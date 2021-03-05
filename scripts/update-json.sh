@@ -28,33 +28,33 @@ for (( i=0; i<${#mes[@]}; ++i )); do
 
 done
 
-rm "$vulturnoData"{total-heladas,total-tropicales}.csv &&
-rm "$vulturnoData"heladas/*.csv &&
-rm "$vulturnoData"tropicales/*.csv &&
-rm "$vulturnoData"records-dias/{records-maxima-year,total-records-min-decade,total-records-max-decade,total-records-min,records-minimas-count-year,records-minima-year,total-records-max,records-maximas-count-year}.csv &&
+# rm "$vulturnoData"{total-heladas,total-tropicales}.csv &&
+# rm "$vulturnoData"heladas/*.csv &&
+# rm "$vulturnoData"tropicales/*.csv &&
+# rm "$vulturnoData"records-dias/{records-maxima-year,total-records-min-decade,total-records-max-decade,total-records-min,records-minimas-count-year,records-minima-year,total-records-max,records-maximas-count-year}.csv &&
 
 
-bash tropical.sh &&
-bash tropical-cities.sh &&
-# Desactivado en invierno
-# bash temp-extreme.sh &&
-bash day-by-day.sh &&
-bash frosty.sh &&
-bash temperature-max-month.sh "$month" "$monthNumber" &&
-bash temperature-min-month.sh "$month" "$monthNumber" &&
-bash temperature-last-two-records-max-month.sh "$month" &&
-bash temperature-last-two-records-min-month.sh "$month" &&
-bash temperature-max-day-by-day-count-month.sh &&
-bash temperature-min-day-by-day-count-month.sh &&
-bash count-records.sh
+# bash tropical.sh &&
+# bash tropical-cities.sh &&
+# # Desactivado en invierno
+# # bash temp-extreme.sh &&
+# bash day-by-day.sh &&
+# bash frosty.sh &&
+# bash temperature-max-month.sh "$month" "$monthNumber" &&
+# bash temperature-min-month.sh "$month" "$monthNumber" &&
+# bash temperature-last-two-records-max-month.sh "$month" &&
+# bash temperature-last-two-records-min-month.sh "$month" &&
+# bash temperature-max-day-by-day-count-month.sh &&
+# bash temperature-min-day-by-day-count-month.sh &&
+# bash count-records.sh
 
-# movemos los datasets a vulturno
+# # movemos los datasets a vulturno
 
-mv "$vulturnoData"total-heladas.csv "$vulturnoCSV" &&
-mv "$vulturnoData"total-tropicales.csv "$vulturnoCSV" &&
-mv -f "$vulturnoData"day-by-day/* "$vulturnoCSV"day-by-day/ &&
-mv -f "$vulturnoData"tropicales/* "$vulturnoCSV"tropicales/ &&
-mv -f "$vulturnoData"heladas/* "$vulturnoCSV"heladas/ &&
-mv -f "$vulturnoData"records-dias/maximas/*.csv "$vulturnoCSV"max/dos-records/ &&
-mv -f "$vulturnoData"records-dias/minimas/*.csv "$vulturnoCSV"min/dos-records/
+# mv "$vulturnoData"total-heladas.csv "$vulturnoCSV" &&
+# mv "$vulturnoData"total-tropicales.csv "$vulturnoCSV" &&
+# mv -f "$vulturnoData"day-by-day/* "$vulturnoCSV"day-by-day/ &&
+# mv -f "$vulturnoData"tropicales/* "$vulturnoCSV"tropicales/ &&
+# mv -f "$vulturnoData"heladas/* "$vulturnoCSV"heladas/ &&
+# mv -f "$vulturnoData"records-dias/maximas/*.csv "$vulturnoCSV"max/dos-records/ &&
+# mv -f "$vulturnoData"records-dias/minimas/*.csv "$vulturnoCSV"min/dos-records/
 
