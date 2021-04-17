@@ -8,10 +8,10 @@ bash tropical-cities.sh &&
 bash temp-extreme.sh &&
 bash day-by-day.sh &&
 bash frosty.sh &&
-bash temperature-max-month.sh octubre 10 &&
-bash temperature-min-month.sh octubre 10 &&
-bash temperature-last-two-records-max-month.sh Noviembre &&
-bash temperature-last-two-records-min-month.sh Noviembre &&
+bash temperature-max-month.sh marzo 03 &&
+bash temperature-min-month.sh marzo 03 &&
+bash temperature-last-two-records-max-month.sh Marzo &&
+bash temperature-last-two-records-min-month.sh Marzo &&
 bash temperature-max-day-by-day-count-month.sh &&
 bash temperature-min-day-by-day-count-month.sh &&
 bash count-records.sh
