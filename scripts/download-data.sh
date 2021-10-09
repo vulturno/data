@@ -29,7 +29,6 @@ bash lurte-anual.sh 1950 2019 7031 &&
 bash lurte-anual.sh 1950 2019 1690A &&
 bash lurte-anual.sh 1950 2019 1690B &&
 bash lurte-anual.sh 1950 2019 1249I &&
-bash lurte-anual.sh 1950 2019 9262 &&
 bash lurte-anual.sh 1950 2019 1484C &&
 bash lurte-anual.sh 1950 2019 0016A &&
 bash lurte-anual.sh 1950 2019 2867 &&

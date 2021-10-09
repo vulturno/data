@@ -33,7 +33,7 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
     for ((j = 0; j < ${#days[@]}; j++)); do
 
         csvgrep -c fecha -r "${days[$j]}$" ~/github/data/day-by-day/"${nombre[$i]}"-diarias.csv | csvsort -c maxima -r > temp.csv &&
-        sed '1,2!d' temp.csv >> ~/github/data/records-dias/maximas/"${nombre[$i]}"-records.csv &&
+        sed -n '2{p;q}' temp.csv >> ~/github/data/records-dias/maximas/"${nombre[$i]}"-records.csv &&
         rm temp.csv
 
     done
@@ -41,14 +41,14 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
 
 done
 
-sed -i '2,${/fecha/d;}' ~/github/data/records-dias/maximas/*.csv
+sed -i '1s/^/fecha,maxima,minima\n/' ~/github/data/records-dias/maximas/*.csv
 
 cat ~/github/data/records-dias/maximas/*-records.csv > ~/github/data/records-dias/records-maxima-year.csv
 
 sed -i '2,${/fecha/d;}' ~/github/data/records-dias/maximas/records-maxima-year.csv
 
 
-for k in {1950..2020}
+for k in {1950..2021}
     do
             csvgrep -c fecha -r "^$k" ~/github/data/records-dias/records-maxima-year.csv | csvstat --count >> ~/github/data/records-dias/records-maximas-count-year.csv
             echo "$k terminada!"

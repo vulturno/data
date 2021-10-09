@@ -4,8 +4,8 @@
 Dependencias: jq - sed(linux)
 A partir de los JSON en bruto vamos a obtener varios CSV.
 Cada CSV va a contener una franja de temperatura.
-Desde los 35ºC hasta los 45ºC.
-Ahora vamos a seleccionar aquellos valores que son iguales o superiores a 45ºC en .tmax
+Desde los 35ºC hasta los 50ºC.
+Ahora vamos a seleccionar aquellos valores que son iguales o superiores a 50ºC en .tmax
 Y nos quedamos con los valores de .fecha y .tmax
 Al final pipeamos con la opcion @csv para que exporte un CSV.
 El archivo generado se sigue quedando con algunas comillas dobles.
@@ -25,7 +25,7 @@ readarray -t year < ~/github/data/year.csv
 # Creamos el directorio
 mkdir ~/github/data/extreme-temp
 
-for x in {35..45};
+for x in {35..50};
     do
         # Creamos un directorio por cada temperatura "extrema"
         mkdir ~/github/data/extreme-temp/temp-"$x"
@@ -33,7 +33,7 @@ for x in {35..45};
         # Recorremos el array de nombre de estación
         for (( i=0; i<${#nombre[@]}; ++i )); do
 
-            # Obtenemos un CSV solamente con la fecha, y temperaturas máximas iguales o superiores a 45ºC
+            # Obtenemos un CSV solamente con la fecha, y temperaturas máximas iguales o superiores a 50ºC
             jq -r '["fecha", "maxima"], (.[] | select(.tmax >= '$x') | select(.tmax != null) | [.fecha, .tmax]) | @csv' ~/github/data/diarias/"${indicativo[$i]}"-total-diario.json > ~/github/data/extreme-temp/temp-"$x"/"${nombre[$i]}"-temp-"$x".csv
             echo "${nombre[$i]} terminada!"
         done

@@ -12,7 +12,7 @@ Guardamos todos los archivos en su respectiva carpeta.
 Eliminamos todos los temporales
 '
 
-cities=('Albacete' 'Alicante' 'Almeria' 'Avila' 'Badajoz' 'Barcelona' 'Bilbao' 'Burgos' 'Caceres' 'Castellon' 'Ciudad-Real' 'Cordoba' 'Coruña' 'Cuenca' 'Donostia' 'Girona' 'Granada' 'GranCanaria' 'Huelva' 'Huesca' 'Jerez' 'Leon' 'Lleida' 'Logroño' 'Madrid' 'Malaga' 'Melilla' 'Murcia' 'Ourense' 'Oviedo' 'Palma' 'Pamplona' 'Pontevedra' 'Reus' 'Salamanca' 'Santander' 'Santiago' 'Segovia' 'Sevilla' 'Soria' 'Tenerife' 'Toledo' 'Valencia' 'Valladolid' 'Zaragoza')
+cities=('Albacete' 'Alicante' 'Almeria' 'Avila' 'Badajoz' 'Barcelona' 'Bilbao' 'Burgos' 'Caceres' 'Castellon' 'Ciudad-Real' 'Cordoba' 'Coruña' 'Cuenca' 'Donostia' 'Girona' 'Granada' 'GranCanaria' 'Huelva' 'Huesca' 'Jerez' 'Leon' 'Lleida' 'Logroño' 'Madrid' 'Malaga' 'Melilla' 'Murcia' 'Ourense' 'Oviedo' 'Palma' 'Pontevedra' 'Reus' 'Salamanca' 'Santander' 'Santiago' 'Segovia' 'Sevilla' 'Soria' 'Tenerife' 'Toledo' 'Valencia' 'Valladolid' 'Zaragoza')
 
 # Recorremos el array de ciudades
 for (( i=0; i<${#cities[@]}; ++i )); do
