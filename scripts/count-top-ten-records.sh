@@ -14,7 +14,7 @@ readarray -t indicativo < ~/github/data/stations-indicative.csv
 readarray -t year < ~/github/data/year.csv
 
 
-for x in {1950..2020};
+for x in {1950..2022};
   do
     csvgrep -c year -r "^${x}" ~/github/data/records-dias/maximas/top-records/total/all-stations.csv | csvstat -c year --count >>  ~/github/data/records-dias/maximas/top-records/total/count-top-records.csv
   done
