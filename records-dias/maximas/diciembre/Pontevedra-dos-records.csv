@@ -6,7 +6,7 @@ fecha,mes,dia,primero,segundo,yearprimera,yearsegundo
 1967-12-05,Diciembre,5,20,18.5,1967,2016
 1968-12-06,Diciembre,6,20,19.2,1968,1991
 1989-12-07,Diciembre,7,20,19.6,1989,2000
-1989-12-08,Diciembre,8,19.6,18,1989,1968
+1989-12-08,Diciembre,8,19.6,18.4,1989,2022
 1978-12-09,Diciembre,9,19,19,1978,1984
 2010-12-10,Diciembre,10,21.7,18,2010,1977
 2010-12-11,Diciembre,11,21.1,18.2,2010,1984
@@ -29,4 +29,4 @@ fecha,mes,dia,primero,segundo,yearprimera,yearsegundo
 1983-12-28,Diciembre,28,18,17.6,1983,2019
 2019-12-29,Diciembre,29,18.2,18,2019,1983
 1974-12-30,Diciembre,30,17,16.5,1974,2008
-2021-12-31,Diciembre,31,21.5,17,2021,1977
+2021-12-31,Diciembre,31,21.5,18,2021,2022

@@ -19,7 +19,6 @@ readarray -t nombre < ~/github/data/stations-name.csv
 # Generamos el array de la serie de años
 readarray -t year < ~/github/data/year.csv
 
-
 # Recorremos el array de nombre de estación
 for (( i=0; i<${#nombre[@]}; ++i )); do
 

@@ -45,10 +45,10 @@ sed -i '1s/^/fecha,maxima,minima\n/' ~/github/data/records-dias/maximas/*.csv
 
 cat ~/github/data/records-dias/maximas/*-records.csv > ~/github/data/records-dias/records-maxima-year.csv
 
-sed -i '2,${/fecha/d;}' ~/github/data/records-dias/maximas/records-maxima-year.csv
+sed -i '2,${/fecha/d;}' ~/github/data/records-dias/records-maxima-year.csv
 
 
-for k in {1950..2022}
+for k in {1950..2023}
     do
             csvgrep -c fecha -r "^$k" ~/github/data/records-dias/records-maxima-year.csv | csvstat --count >> ~/github/data/records-dias/records-maximas-count-year.csv
             echo "$k terminada!"
