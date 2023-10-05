@@ -49,7 +49,7 @@ done
 # Eliminamos los row count que produce csvkit
 sed -i 's/Row count: //g' ~/github/data/tropicales/count-tropicales.csv &&
 # Ahora vamos a crear un CSV con los años y el total de cada año
-csvjoin -u 1 ~/github/data/year.csv ~/github/data/tropicales/count-tropicales.csv > ~/github/data/total-tropicales.csv
+csvjoin -u 1 -y 0 ~/github/data/year.csv ~/github/data/tropicales/count-tropicales.csv > ~/github/data/total-tropicales.csv
 
 # Añadimos el header con year y total al csv
 sed -i '1s/^/year,total\n/' ~/github/data/total-tropicales.csv

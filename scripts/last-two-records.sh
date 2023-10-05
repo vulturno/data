@@ -114,7 +114,7 @@ for ((i = 0; i < ${#nombre[@]}; i++)); do
     rm "$folder"temp-segundo-record.csv
 
     # Ahora vamos a generar el CSV
-    csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"segundo-record.csv "$folder"year-record-primera.csv "$folder"year-record-segunda.csv > "$folder""${nombre[$i]}"-primero-segundo-record.csv
+    csvjoin -u 1 -y 0 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"segundo-record.csv "$folder"year-record-primera.csv "$folder"year-record-segunda.csv > "$folder""${nombre[$i]}"-primero-segundo-record.csv
 
     # Eliminamos todos los archivos que ya no son necesarios
     rm "$folder"{segundo-record,primer-record,"${nombre[$i]}"-dos-records,fecha-record-segunda,fecha-record-primera,year-record-segunda,year-record-primera,temp,fecha-records,mes}.csv

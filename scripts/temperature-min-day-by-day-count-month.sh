@@ -23,7 +23,7 @@ done
 sed -i 's/Row count: //g' ~/github/data/records-dias/records-minimas-count-year.csv
 
 # Ahora vamos a crear un CSV con los años y el total de cada año
-csvjoin -u 1 ~/github/data/year.csv ~/github/data/records-dias/records-minimas-count-year.csv > ~/github/data/records-dias/total-records-min.csv
+csvjoin -u 1 -y 0 ~/github/data/year.csv ~/github/data/records-dias/records-minimas-count-year.csv > ~/github/data/records-dias/total-records-min.csv
 
 # Añadimos el header con year y total al csv
 sed -i '1s/^/year,total\n/' ~/github/data/records-dias/total-records-min.csv

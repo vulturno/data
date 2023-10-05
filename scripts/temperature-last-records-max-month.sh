@@ -77,7 +77,7 @@ function checkRecords {
         done
 
         # Ahora vamos a generar el CSV
-        csvjoin -u 1 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"ciudad.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"year-record-primera.csv > "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
+        csvjoin -u 1 -y 0 "$folder"fecha-record-primera.csv "$folder"mes.csv "$folder"ciudad.csv "$folder"fecha-records.csv "$folder"primer-record.csv "$folder"year-record-primera.csv > "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
 
         sed -i '1d' "$folder""${nombre[$i]}"-"${month}"-top-10-records.csv
 

@@ -59,7 +59,7 @@ for x in {35..50};
         sed -i 's/Row count: //g' ~/github/data/extreme-temp/temp-"$x"/count-temp-"$x".csv &&
 
         # Ahora vamos a crear un CSV con los años y el total de cada año
-        csvjoin -u 1 ~/github/data/year.csv ~/github/data/extreme-temp/temp-"$x"/count-temp-"$x".csv > ~/github/data/extreme-temp/total-temp-"$x".csv
+        csvjoin -u 1 -y 0 ~/github/data/year.csv ~/github/data/extreme-temp/temp-"$x"/count-temp-"$x".csv > ~/github/data/extreme-temp/total-temp-"$x".csv
 
         # Añadimos el header con year y total al csv
         sed -i '1s/^/year,total\n/' ~/github/data/extreme-temp/total-temp-"$x".csv
