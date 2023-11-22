@@ -29,5 +29,3 @@ done
 sed -i 's/\"//g' ~/github/data/extreme-temp/ciudades/*.csv
 
 echo "Mission acomplished!! 🤓"
-
-say -v Alex "Mission acomplished"

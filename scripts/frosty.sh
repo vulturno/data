@@ -60,5 +60,3 @@ csvjoin -u 1 -y 0 ~/github/data/year.csv ~/github/data/heladas/count-heladas.csv
 sed -i '1s/^/year,total\n/' ~/github/data/total-heladas.csv
 
 echo "Mission acomplished!! 🤓"
-
-say -v Alex "Mission acomplished"

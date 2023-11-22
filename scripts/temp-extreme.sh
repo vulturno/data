@@ -66,6 +66,4 @@ for x in {35..50};
 
         echo "Mission acomplished!! 🤓"
 
-        # chorrada para mac
-        say -v Alex "Mission acomplished"
 done
