@@ -17,6 +17,8 @@ done
 
 sed -i 's/\.//' ~/github/data/records-dias/decadas-cont-total-max.csv ~/github/data/records-dias/decadas-cont-total-min.csv
 
+sed -i 's/\,//g' ~/github/data/records-dias/decadas-cont-total-max.csv ~/github/data/records-dias/decadas-cont-total-min.csv
+
 sed -i '1s/^/totaldecade\n/' ~/github/data/records-dias/decadas-cont-total-max.csv ~/github/data/records-dias/decadas-cont-total-min.csv
 
 csvjoin -u 1 -y 0 -I ~/github/data/records-dias/decadas-sin-total-max.csv ~/github/data/records-dias/decadas-cont-total-max.csv > ~/github/data/records-dias/total-records-max-decade.csv

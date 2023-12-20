@@ -22,7 +22,7 @@ readarray -t indicativo < ~/github/data/stations-indicative.csv
 for (( i=0; i<${#nombre[@]}; ++i )); do
 
     # Obtenemos un CSV solamente con la fecha, máxima y mínima de cada día
-    jq -r '["fecha", "maxima", "minima"], (.[] | select(.tmax != null) | select(.tmin != null) | [.fecha, .tmax, .tmin ]) | @csv' ~/github/data/diarias/"${indicativo[$i]}"-total-diario.json > ~/github/data/day-by-day/"${nombre[$i]}"-diarias.csv
+    jq -r '["fecha", "maxima", "minima"], (.[] | select(.tmax) | select(.tmin) | [.fecha, .tmax, .tmin ]) | @csv' ~/github/data/diarias/"${indicativo[$i]}"-total-diario.json > ~/github/data/day-by-day/"${nombre[$i]}"-diarias.csv
 
     echo "${nombre[$i]} terminada!"
 done
