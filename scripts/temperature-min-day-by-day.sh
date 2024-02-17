@@ -47,7 +47,7 @@ cat ~/github/data/records-dias/minimas/*-records.csv > ~/github/data/records-dia
 
 sed -i '2,${/fecha/d;}' ~/github/data/records-dias/records-minima-year.csv
 
-for k in {1950..2023};
+for k in {1950..2024};
 do
     csvgrep -c fecha -r "^$k" ~/github/data/records-dias/records-minima-year.csv | csvstat --count >> ~/github/data/records-dias/records-minimas-count-year.csv
 
