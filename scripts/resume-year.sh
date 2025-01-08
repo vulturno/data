@@ -16,12 +16,13 @@ station=('0016A' '0076' '0367' '1024E' '1082' '1109' '1249I' '1387' '1428' '1484
 
 # Recorremos el array stations
 for (( i=0; i<${#station[@]}; ++i )); do
-    jq -c 'map(select(.fecha | contains("-13")) |  {"year": .fecha, "temp": .tm_mes} )' ~/github/data/anuales/"${station[$i]}"-total-anual.json >> ~/github/data/anuales/"${station[$i]}"-limpio.json &&
-    sed -i 's/\-13//g' ~/github/data/anuales/"${station[$i]}"-limpio.json &&
-    json2csv -i ~/github/data/anuales/"${station[$i]}"-limpio.json -o ~/github/data/anuales/csv/"${station[$i]}".csv -q '' &&
-
+    # Convierte JSON a CSV directamente con JQ
+    jq -r 'map(select(.fecha | contains("-13")) |
+           {"year": .fecha, "temp": .tm_mes}) |
+           (.[0] | keys_unsorted) as $keys |
+           ($keys | @csv),
+           (.[] | [.[$keys[]]] | @csv)' \
+        ~/github/data/anuales/"${station[$i]}"-total-anual.json |
+    sed 's/-13//g' > ~/github/data/anuales/csv/"${station[$i]}".csv &&
     echo "${station[$i]}"
-
-done &&
-
-find . -name '*-limpio*' -delete
+done

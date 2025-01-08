@@ -4,7 +4,7 @@ fecha,mes,dia,primero,segundo,yearprimera,yearsegundo
 1965-09-03,Septiembre,3,6.2,7.3,1965,1996
 1996-09-04,Septiembre,4,6.6,6.8,1996,1968
 1965-09-05,Septiembre,5,6.2,6.8,1965,2000
-1965-09-06,Septiembre,6,5.8,7.2,1965,2015
+1965-09-06,Septiembre,6,5.8,6.7,1965,2024
 2008-09-07,Septiembre,7,6.3,6.4,2008,2019
 2015-09-08,Septiembre,8,5.8,7.0,2015,2020
 2019-09-09,Septiembre,9,5.7,6.8,2019,1967
@@ -12,7 +12,7 @@ fecha,mes,dia,primero,segundo,yearprimera,yearsegundo
 1965-09-11,Septiembre,11,5.0,6.1,1965,2008
 2008-09-12,Septiembre,12,2.9,5.9,2008,1995
 1995-09-13,Septiembre,13,3.5,3.7,1995,2008
-1993-09-14,Septiembre,14,5.7,5.7,1993,2008
+2024-09-14,Septiembre,14,3.7,3.7,2024,2024
 1995-09-15,Septiembre,15,3.7,5.0,1995,2017
 2017-09-16,Septiembre,16,1.4,3.5,2017,1995
 2017-09-17,Septiembre,17,2.9,3.4,2017,1994
