@@ -34,7 +34,11 @@ done
 sed -i 's/\"//g' ~/github/data/tropicales/*.csv
 
 # Concatenamos todos los CSV de heladas en el mismo
-cat ~/github/data/tropicales/*.csv > ~/github/data/tropicales/total-tropicales.csv &&
+# Recorremos el array en vez de usar *.csv: el glob incluiria el propio destino
+# (cat se leeria a si mismo en bucle) y los -count- y -total- de la pasada anterior
+for (( i=0; i<${#nombre[@]}; ++i )); do
+    cat ~/github/data/tropicales/"${nombre[$i]}"-tropicales.csv
+done > ~/github/data/tropicales/total-tropicales.csv &&
 echo "Todos los CSV concantenados"
 
 # Al concantenar todos los CSV tenemos todos los headers fecha,min de cada CSV
@@ -49,7 +53,7 @@ done
 # Eliminamos los row count que produce csvkit
 sed -i 's/Row count: //g' ~/github/data/tropicales/count-tropicales.csv &&
 # Ahora vamos a crear un CSV con los años y el total de cada año
-csvjoin -u 1 -y 0 ~/github/data/year.csv ~/github/data/tropicales/count-tropicales.csv > ~/github/data/total-tropicales.csv
+csvjoin -u 1 -y 0 -I ~/github/data/year.csv ~/github/data/tropicales/count-tropicales.csv > ~/github/data/total-tropicales.csv
 
 # Añadimos el header con year y total al csv
 sed -i '1s/^/year,total\n/' ~/github/data/total-tropicales.csv

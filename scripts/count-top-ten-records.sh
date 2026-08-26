@@ -14,7 +14,7 @@ readarray -t indicativo < ~/github/data/stations-indicative.csv
 readarray -t year < ~/github/data/year.csv
 
 
-for x in {1950..2024};
+for x in {1950..2026};
   do
     csvgrep -c year -r "^${x}" ~/github/data/records-dias/maximas/top-records/total/all-stations.csv | csvstat -c year --count >>  ~/github/data/records-dias/maximas/top-records/total/count-top-records.csv
   done
@@ -24,7 +24,7 @@ for x in {1950..2024};
   sed -i 's/Row count: //g' ~/github/data/records-dias/maximas/top-records/total/count-top-records.csv &&
 
   # Ahora vamos a crear un CSV con los años y el total de cada año
-  csvjoin -u 1 -y 0 ~/github/data/year.csv ~/github/data/records-dias/maximas/top-records/total/count-top-records.csv > ~/github/data/records-dias/maximas/top-records/total/count-without-rows-top-records.csv
+  csvjoin -u 1 -y 0 -I ~/github/data/year.csv ~/github/data/records-dias/maximas/top-records/total/count-top-records.csv > ~/github/data/records-dias/maximas/top-records/total/count-without-rows-top-records.csv
 
   # Añadimos el header con year y total al csv
   sed -i '1s/^/year,total\n/' ~/github/data/records-dias/maximas/top-records/total/count-without-rows-top-records.csv &&
