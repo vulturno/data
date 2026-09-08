@@ -548385,4 +548385,314 @@
   "tmin" : 20.5,
   "tmax" : 30.9,
   "sol" : 10.9
+} , {
+  "fecha" : "2026-08-01",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.0,
+  "prec" : 0.0,
+  "tmin" : 23.3,
+  "tmax" : 30.8
+}, {
+  "fecha" : "2026-08-02",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.6,
+  "prec" : 0.0,
+  "tmin" : 24.1,
+  "tmax" : 35.2
+}, {
+  "fecha" : "2026-08-03",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.1,
+  "prec" : 0.0,
+  "tmin" : 23.6,
+  "tmax" : 32.6
+}, {
+  "fecha" : "2026-08-04",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.8,
+  "prec" : 0.0,
+  "tmin" : 22.9,
+  "tmax" : 34.6
+}, {
+  "fecha" : "2026-08-05",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.0,
+  "prec" : 0.0,
+  "tmin" : 23.5,
+  "tmax" : 30.6
+}, {
+  "fecha" : "2026-08-06",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.3,
+  "prec" : 0.0,
+  "tmin" : 26.0,
+  "tmax" : 30.6
+}, {
+  "fecha" : "2026-08-07",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.8,
+  "prec" : 0.0,
+  "tmin" : 24.5,
+  "tmax" : 31.0
+}, {
+  "fecha" : "2026-08-08",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.5,
+  "prec" : 0.0,
+  "tmin" : 23.0,
+  "tmax" : 32.0
+}, {
+  "fecha" : "2026-08-09",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.4,
+  "prec" : 0.0,
+  "tmin" : 24.5,
+  "tmax" : 32.2
+}, {
+  "fecha" : "2026-08-10",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.0,
+  "prec" : 0.4,
+  "tmin" : 25.6,
+  "tmax" : 32.4
+}, {
+  "fecha" : "2026-08-11",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.0,
+  "prec" : 0.0,
+  "tmin" : 25.5,
+  "tmax" : 32.4
+}, {
+  "fecha" : "2026-08-12",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.3,
+  "prec" : 0.0,
+  "tmin" : 25.9,
+  "tmax" : 32.7
+}, {
+  "fecha" : "2026-08-13",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.2,
+  "prec" : 0.0,
+  "tmin" : 25.9,
+  "tmax" : 32.5
+}, {
+  "fecha" : "2026-08-14",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.0,
+  "prec" : 0.0,
+  "tmin" : 23.9,
+  "tmax" : 34.2
+}, {
+  "fecha" : "2026-08-15",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.8,
+  "prec" : 0.0,
+  "tmin" : 24.1,
+  "tmax" : 33.4
+}, {
+  "fecha" : "2026-08-16",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.8,
+  "prec" : 0.0,
+  "tmin" : 25.2,
+  "tmax" : 32.5
+}, {
+  "fecha" : "2026-08-17",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.8,
+  "prec" : 0.0,
+  "tmin" : 26.0,
+  "tmax" : 31.7
+}, {
+  "fecha" : "2026-08-18",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 26.9,
+  "prec" : 0.0,
+  "tmin" : 21.2,
+  "tmax" : 32.6
+}, {
+  "fecha" : "2026-08-19",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 29.5,
+  "prec" : 0,
+  "tmin" : 22.5,
+  "tmax" : 36.5
+}, {
+  "fecha" : "2026-08-20",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 30.5,
+  "prec" : 0.0,
+  "tmin" : 26.0,
+  "tmax" : 35.0
+}, {
+  "fecha" : "2026-08-21",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.7,
+  "prec" : 0.0,
+  "tmin" : 22.2,
+  "tmax" : 33.2
+}, {
+  "fecha" : "2026-08-22",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.0,
+  "prec" : 0.0,
+  "tmin" : 23.4,
+  "tmax" : 30.7
+}, {
+  "fecha" : "2026-08-23",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 27.6,
+  "prec" : 0,
+  "tmin" : 23.6,
+  "tmax" : 31.7
+}, {
+  "fecha" : "2026-08-24",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 28.8,
+  "prec" : 0,
+  "tmin" : 25.0,
+  "tmax" : 32.6
+}, {
+  "fecha" : "2026-08-25",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 25.6,
+  "prec" : 0.0,
+  "tmin" : 20.2,
+  "tmax" : 31.0
+}, {
+  "fecha" : "2026-08-26",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 25.4,
+  "prec" : 0.0,
+  "tmin" : 19.4,
+  "tmax" : 31.4
+}, {
+  "fecha" : "2026-08-27",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 26.5,
+  "prec" : 1.3,
+  "tmin" : 19.9,
+  "tmax" : 33.1
+}, {
+  "fecha" : "2026-08-28",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 23.6,
+  "prec" : 0.3,
+  "tmin" : 19.5,
+  "tmax" : 27.6
+}, {
+  "fecha" : "2026-08-29",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 22.6,
+  "prec" : 0.0,
+  "tmin" : 17.0,
+  "tmax" : 28.1
+}, {
+  "fecha" : "2026-08-30",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 22.8,
+  "prec" : 0.0,
+  "tmin" : 17.5,
+  "tmax" : 28.1
+}, {
+  "fecha" : "2026-08-31",
+  "indicativo" : 7031,
+  "nombre" : "SAN JAVIER AEROPUERTO",
+  "provincia" : "MURCIA",
+  "altitud" : 4,
+  "tmed" : 24.0,
+  "prec" : 0.0,
+  "tmin" : 18.5,
+  "tmax" : 29.4
 } ]

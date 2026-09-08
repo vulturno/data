@@ -19,7 +19,7 @@ DATA=~/github/data
 VULT=~/github/vulturno/csv
 
 # Fecha hasta la que deben llegar las series diarias
-FIN=2026-07-31
+FIN=2026-08-31
 
 # Rango valido para los años de los CSV anuales
 YEAR_MIN=1900
@@ -48,10 +48,14 @@ fin_propio_json() {
 # Ciudades cuyo CSV diario termina antes de FIN a proposito.
 # Oviedo dejo de emitir; Santander emite sin tmax/tmin desde el 2024-05-16,
 # asi que sus registros existen pero no llegan a day-by-day.
+# Malaga: AEMET no ha consolidado el 30 y el 31 de agosto de 2026 (los registros
+# existen pero llegan con tmax/tmin nulos). Es temporal: quitar esta linea en cuanto
+# AEMET los rellene o al incorporar un mes posterior en el que ya vengan completos.
 fin_propio_csv() {
     case "$1" in
         Oviedo)    echo "2023-02-01" ;;
         Santander) echo "2024-05-15" ;;
+        Malaga)    echo "2026-08-29" ;;
         *)         echo "$FIN" ;;
     esac
 }
@@ -76,6 +80,19 @@ check_anios() {
     for y in "$@"; do
         grep -q "^${y}," "$f" || fallo "sin fila del año $y: $f"
     done
+}
+
+# Detecta la acumulacion por >> de los scripts que cuentan por año:
+# si no se borra el count-* intermedio, el csvjoin con year.csv deja las filas
+# sobrantes sin año y los totales salen duplicados
+check_serie_anual() {
+    local f=$1
+    [ -s "$f" ] || return 0
+    local vacias dups
+    vacias=$(awk -F, 'NR > 1 && $1 == ""' "$f" | wc -l | tr -d ' ')
+    [ "$vacias" = "0" ] || fallo "$vacias filas sin año (count-* no borrado antes de regenerar): $f"
+    dups=$(awk -F, 'NR > 1 && $1 != "" {print $1}' "$f" | sort | uniq -d | wc -l | tr -d ' ')
+    [ "$dups" = "0" ] || fallo "$dups años duplicados: $f"
 }
 
 readarray -t ciudades < "$DATA"/stations-name.csv
@@ -154,6 +171,8 @@ bloque "b) Tropicales y heladas por ciudad"
 for c in "${ciudades[@]}"; do
     check_csv "$DIR_TRO/${c}-total-tropicales.csv" "year,total"
     check_csv "$DIR_HEL/${c}-total-heladas.csv" "year,total"
+    check_serie_anual "$DIR_TRO/${c}-total-tropicales.csv"
+    check_serie_anual "$DIR_HEL/${c}-total-heladas.csv"
 done
 
 # ---------------------------------------------------------------------------
@@ -186,6 +205,7 @@ check_csv "$F_DEC_MAX" "year,total,decade,totaldecade"
 check_csv "$F_DEC_MIN" "year,total,decade,totaldecade"
 for f in "$F_TOTAL_TRO" "$F_TOTAL_HEL" "$F_DEC_MAX" "$F_DEC_MIN"; do
     check_anios "$f" 2025 2026
+    check_serie_anual "$f"
 done
 
 # totaldecade no puede quedar vacio: pasa si el array decade de count-records.sh
@@ -203,6 +223,7 @@ bloque "b) Temperaturas extremas"
 for x in $(seq 35 50); do
     check_csv "$DIR_EXT/total-temp-${x}.csv" "year,total"
     check_anios "$DIR_EXT/total-temp-${x}.csv" 2025 2026
+    check_serie_anual "$DIR_EXT/total-temp-${x}.csv"
 done
 
 # ---------------------------------------------------------------------------
