@@ -19,7 +19,7 @@ DATA=~/github/data
 VULT=~/github/vulturno/csv
 
 # Fecha hasta la que deben llegar las series diarias
-FIN=2026-08-31
+FIN=2026-10-31
 
 # Rango valido para los años de los CSV anuales
 YEAR_MIN=1900
@@ -48,14 +48,14 @@ fin_propio_json() {
 # Ciudades cuyo CSV diario termina antes de FIN a proposito.
 # Oviedo dejo de emitir; Santander emite sin tmax/tmin desde el 2024-05-16,
 # asi que sus registros existen pero no llegan a day-by-day.
-# Malaga: AEMET no ha consolidado el 30 y el 31 de agosto de 2026 (los registros
-# existen pero llegan con tmax/tmin nulos). Es temporal: quitar esta linea en cuanto
+# Pamplona: AEMET no ha consolidado el 31 de octubre de 2026 (el registro
+# existe pero llega con tmax/tmin nulos). Es temporal: quitar esta linea en cuanto
 # AEMET los rellene o al incorporar un mes posterior en el que ya vengan completos.
 fin_propio_csv() {
     case "$1" in
         Oviedo)    echo "2023-02-01" ;;
         Santander) echo "2024-05-15" ;;
-        Malaga)    echo "2026-08-29" ;;
+        Pamplona)  echo "2026-10-30" ;;
         *)         echo "$FIN" ;;
     esac
 }
